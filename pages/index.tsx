@@ -13,7 +13,15 @@ const Home: NextPage = () => {
   const getAccounts = async() => {
     console.log(await provider?.listAccounts());
   }
+console.log(contract)
 
+  const contractInfo = async () => {
+    console.log(await contract!.name())
+    console.log(await contract!.symbol())
+  }
+  if(contract) {
+    contractInfo();
+  }
   if(provider) {
     getAccounts();
   }
